@@ -1,0 +1,16 @@
+---
+title: "Assignment4"
+author: "BINGYU YANG"
+date: '2022-05-18'
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Section 1
+
+# Section 2
+
+# Section 3
