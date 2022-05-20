@@ -48,4 +48,31 @@ library(bookdown)
 
 ```
 
+## Section 3
 
+\section*{Thailand and Ethiopia}
+
+```{r global_options, include=FALSE}
+knitr::opts_chunk$set(fig.pos = 'H')
+```
+
+```{r read data, echo = FALSE, message = FALSE, warning = FALSE}
+air_pollution <- read.csv("Data/death-rates-from-air-pollution.csv")
+```
+
+```{r filter data, echo = FALSE, message = FALSE, warning = FALSE}
+data_Thailand <- air_pollution %>% 
+  filter(Entity == "Thailand")
+
+data_Ethiopia <- air_pollution %>% 
+  filter(Entity == "Ethiopia")
+```
+
+```{r filter data2, echo = FALSE, message = FALSE, warning = FALSE}
+data_Countries <- air_pollution %>% 
+  filter(Entity %in% c("Thailand", "Ethiopia"))
+```
+
+### Section 3 - Introduction
+
+XXX
