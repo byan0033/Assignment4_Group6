@@ -45,34 +45,112 @@ library(tidyverse)
 library(readr)
 library(kableExtra)
 library(bookdown)
+library(dplyr)
 
 ```
 
 ## Section 3
 
+### Introduction
+
 \section*{Thailand and Ethiopia}
+
+
+Research Questions
+- What is the country and its trend across the year? What is the most severe cause of deaths in that particular country?
+- What is the 3 lowest polluted countries? What is the comparison between two most causes of deaths for pollution? What are possible reasons for these significantly low result?
 
 ```{r global_options, include=FALSE}
 knitr::opts_chunk$set(fig.pos = 'H')
 ```
 
 ```{r read data, echo = FALSE, message = FALSE, warning = FALSE}
-air_pollution <- read.csv("Data/death-rates-from-air-pollution.csv")
+data <- read.csv("Data/death-rates-from-air-pollution.csv")
 ```
 
-```{r filter data, echo = FALSE, message = FALSE, warning = FALSE}
-data_Thailand <- air_pollution %>% 
-  filter(Entity == "Thailand")
-
-data_Ethiopia <- air_pollution %>% 
-  filter(Entity == "Ethiopia")
+```{r clean data 1, echo = FALSE, message = FALSE, warning = FALSE}
+air_pollution <- data %>% 
+  rename(Country = Entity) %>% 
+  rename(Deaths_From_Solid_Fuels = 
+         Deaths...Cause..All.causes...Risk..Household.air.pollution.from.solid.fuels...Sex..Both...Age..Age.standardized..Rate.) %>%
+  rename(Deaths_From_Ambient_Matter =
+         Deaths...Cause..All.causes...Risk..Ambient.particulate.matter.pollution...Sex..Both...Age..Age.standardized..Rate.) %>% 
+  rename(Deaths_From_Air_Pollution = Deaths...Cause..All.causes...Risk..Air.pollution...Sex..Both...Age..Age.standardized..Rate.) %>% 
+  rename(Deaths_Ambient_Ozone = Deaths...Cause..All.causes...Risk..Ambient.ozone.pollution...Sex..Both...Age..Age.standardized..Rate.) %>% 
+  select("Country", "Year", "Deaths_From_Solid_Fuels", "Deaths_From_Ambient_Matter", "Deaths_From_Air_Pollution", "Deaths_Ambient_Ozone")
 ```
 
-```{r filter data2, echo = FALSE, message = FALSE, warning = FALSE}
-data_Countries <- air_pollution %>% 
-  filter(Entity %in% c("Thailand", "Ethiopia"))
-```
 
-### Section 3 - Introduction
+### Analysis
 
 XXX
+
+```{r Question 1, echo = FALSE, message = FALSE, warning = FALSE}
+air_pollution_highest <- air_pollution %>% 
+  select("Country", "Year", "Deaths_From_Air_Pollution") %>% 
+  group_by(Country) %>%
+  summarise(Deaths_From_Air_Pollution = mean(Deaths_From_Air_Pollution, na.rm=TRUE)) %>%
+  arrange(desc(Deaths_From_Air_Pollution))
+
+air_pollution_SI <- air_pollution %>% 
+  filter(Country == "Solomon Islands")
+```
+
+
+```{r figure1, echo = FALSE, message = FALSE, warning = FALSE, fig.align='center', fig.cap = "Solomon Islands - Annual Trend", out.width='80%'}
+colors <- c("Deaths From Air Pollution" = "red", "Deaths From Solid Fuels" = "blue", "Deaths From Ambient Matter" = "green", "Deaths Ambient Ozone" = "yellow")
+
+air_pollution_SI %>%
+  ggplot(aes(x = Year)) +
+  geom_line(aes(y = Deaths_From_Air_Pollution, color = "Deaths From Air Pollution")) +
+  geom_line(aes(y = Deaths_From_Solid_Fuels, color = "Deaths From Solid Fuels")) +
+  geom_line(aes(y = Deaths_From_Ambient_Matter, color = "Deaths From Ambient Matter")) +
+  geom_line(aes(y = Deaths_Ambient_Ozone, color = "Deaths Ambient Ozone")) +
+  labs(y = "Death Rate per Type of Pollution", color = "Legend") +
+  scale_color_manual(values = colors)
+```
+
+
+
+```{r Question 2, echo = FALSE, message = FALSE, warning = FALSE, fig.pos="H"}
+air_pollution_lowest <- air_pollution %>% 
+  select("Country", "Year", "Deaths_From_Air_Pollution") %>% 
+  group_by(Country) %>%
+  summarise(Deaths_From_Air_Pollution = mean(Deaths_From_Air_Pollution, na.rm=TRUE)) %>%
+  arrange(Deaths_From_Air_Pollution)
+
+air_pollution_lowest_cnty <- air_pollution %>% 
+  select("Country", "Year", "Deaths_From_Air_Pollution") %>% 
+  group_by(Country) %>% 
+  filter(Country == c("Iceland", "New Zealand", "Australia", "Puerto Rico")) %>% 
+  summarise(Deaths_From_Air_Pollution = mean(Deaths_From_Air_Pollution, na.rm=TRUE)) %>%
+  arrange(Deaths_From_Air_Pollution) 
+
+air_pollution_lowest_other <- air_pollution %>% 
+  select("Country", "Year", "Deaths_From_Solid_Fuels") %>% 
+  group_by(Country) %>% 
+  filter(Country == c("Iceland", "New Zealand", "Australia", "Puerto Rico")) %>% 
+  summarise(Deaths_From_Solid_Fuels = mean(Deaths_From_Solid_Fuels, na.rm=TRUE)) %>%
+  arrange(Deaths_From_Solid_Fuels) 
+```
+
+
+```{r table1, echo = FALSE, message = FALSE, warning = FALSE, fig.align='center', fig.cap = "Lowest Air Pollution based on Countries", fig.pos="H"}
+air_pollution_lowest_cnty %>%
+  kable(caption = "Top 4 Countries with lowest Air Pollution Death", digits=3) %>% 
+  kable_styling(latex_options = "HOLD_position")
+```
+
+
+```{r table2, echo = FALSE, message = FALSE, warning = FALSE, fig.align='center', fig.cap = "Lowest Air Pollution based on Countries", fig.pos="H"}
+air_pollution_lowest_other %>%
+  kable(caption = "Top 4 Countries with lowest Air Pollution Death from Solid Fuels", digits=3) %>% 
+  kable_styling(latex_options = "HOLD_position")
+```
+
+
+
+
+
+
+
