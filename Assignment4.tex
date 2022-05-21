@@ -29,58 +29,9 @@
 \geometry{a4paper, centering, text={16cm,24cm}}
 \usepackage[style=authoryear-comp,]{biblatex}
 \addbibresource{references.bib}
-\usepackage{color}
-\usepackage{fancyvrb}
-\newcommand{\VerbBar}{|}
-\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
-\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
-% Add ',fontsize=\small' for more characters per line
-\usepackage{framed}
-\definecolor{shadecolor}{RGB}{248,248,248}
-\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
-\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
-\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
-\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
-\newcommand{\BuiltInTok}[1]{#1}
-\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
-\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
-\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
-\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
-\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
-\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
-\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
-\newcommand{\ExtensionTok}[1]{#1}
-\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
-\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
-\newcommand{\ImportTok}[1]{#1}
-\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
-\newcommand{\NormalTok}[1]{#1}
-\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
-\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
-\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
-\newcommand{\RegionMarkerTok}[1]{#1}
-\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
-\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
-\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
-\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
-\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
-\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
 \usepackage{longtable,booktabs}
 % Fix footnotes in tables (requires footnote package)
 \IfFileExists{footnote.sty}{\usepackage{footnote}\makesavenoteenv{long table}}{}
-\usepackage{graphicx,grffile}
-\makeatletter
-\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
-\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
-\makeatother
-% Scale images if necessary, so that they will not overflow the page
-% margins by default, and it is still possible to overwrite the defaults
-% using explicit options in \includegraphics[width, height, ...]{}
-\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
 \IfFileExists{parskip.sty}{%
 \usepackage{parskip}
 }{% else
@@ -353,95 +304,33 @@
 \hypertarget{section-2}{%
 \section{Section 2}\label{section-2}}
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{death }\OtherTok{\textless{}{-}} \FunctionTok{read\_csv}\NormalTok{(here}\SpecialCharTok{::}\FunctionTok{here}\NormalTok{(}\StringTok{"Data/death{-}rates{-}from{-}air{-}pollution.csv"}\NormalTok{))}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-## Rows: 6840 Columns: 7
-## -- Column specification --------------------------------------------------------
-## Delimiter: ","
-## chr (2): Entity, Code
-## dbl (5): Year, Deaths - Cause: All causes - Risk: Household air pollution fr...
-## 
-## i Use `spec()` to retrieve the full column specification for this data.
-## i Specify the column types or set `show_col_types = FALSE` to quiet this message.
-\end{verbatim}
-
 \hypertarget{introduction}{%
-\section{Introduction:}\label{introduction}}
+\subsection{Introduction:}\label{introduction}}
 
-In this section we will compare the different types of pollution from the period of 1990 to 2019 in two countries, Vietnam and New Zealand.
+Pollution is not only the leading factor taking away peoples' lives, it also also leaves serious long-term effects on our living quality.
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{death\_rate }\OtherTok{\textless{}{-}}\NormalTok{ death }\SpecialCharTok{\%\textgreater{}\%}
-  \FunctionTok{filter}\NormalTok{(Entity }\SpecialCharTok{\%in\%} \FunctionTok{c}\NormalTok{(}\StringTok{"Vietnam"}\NormalTok{, }\StringTok{"New Zealand"}\NormalTok{)) }\SpecialCharTok{\%\textgreater{}\%}
-  \FunctionTok{rename}\NormalTok{(}\AttributeTok{Household\_air\_pollution =} \StringTok{"Deaths {-} Cause: All causes {-} Risk: Household air pollution from solid fuels {-} Sex: Both {-} Age: Age{-}standardized (Rate)"}\NormalTok{,}
-         \AttributeTok{Ambient\_particulate\_matter\_pollution =} \StringTok{"Deaths {-} Cause: All causes {-} Risk: Ambient particulate matter pollution {-} Sex: Both {-} Age: Age{-}standardized (Rate)"}\NormalTok{,}
-         \AttributeTok{Air\_pollution =} \StringTok{"Deaths {-} Cause: All causes {-} Risk: Air pollution {-} Sex: Both {-} Age: Age{-}standardized (Rate)"}\NormalTok{,}
-         \AttributeTok{Ambient\_ozone\_pollution =} \StringTok{"Deaths {-} Cause: All causes {-} Risk: Ambient ozone pollution {-} Sex: Both {-} Age: Age{-}standardized (Rate)"}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%}
-  \FunctionTok{pivot\_longer}\NormalTok{(}\AttributeTok{cols =} \FunctionTok{c}\NormalTok{(}\StringTok{"Household\_air\_pollution"}\NormalTok{,}
-               \StringTok{"Ambient\_particulate\_matter\_pollution"}\NormalTok{,}
-               \StringTok{"Air\_pollution"}\NormalTok{, }
-               \StringTok{"Ambient\_ozone\_pollution"}\NormalTok{),}
-               \AttributeTok{names\_to =} \StringTok{"Risk\_factor"}\NormalTok{,}
-               \AttributeTok{values\_to =} \StringTok{"Rate"}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
+In this section we will compare the relationship between death rates and different types of pollution from 1990 to 2019 in two countries, Vietnam and New Zealand.
+
+\emph{The data set was originated from \textcite{owidairpollution}.}
 
 \hypertarget{research-question}{%
-\section{Research question:}\label{research-question}}
-
-We will explore two research questions:
+\subsection{Research question:}\label{research-question}}
 
 \begin{itemize}
 \item
-  Q1: Which type of pollution is the most common attribute of death over years in each of the countries?
+  Q1: Which type of pollution is the most common attribute of death in each country?
 \item
-  Q2: How did the death rates corresponding to different types of pollution change over the years and how different the trends are in both countries?
+  Q2: How did the death rates associated with different types of pollution change over the years in both countries?
 \end{itemize}
 
-\hypertarget{analysis}{%
-\section{Analysis:}\label{analysis}}
+\hypertarget{exploratory-analysis}{%
+\subsection{Exploratory Analysis:}\label{exploratory-analysis}}
 
-\hypertarget{q1}{%
-\subsection{Q1:}\label{q1}}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{death\_cause }\OtherTok{\textless{}{-}}\NormalTok{ death\_rate }\SpecialCharTok{\%\textgreater{}\%}
-  \FunctionTok{group\_by}\NormalTok{(Entity, Risk\_factor) }\SpecialCharTok{\%\textgreater{}\%}
-  \FunctionTok{summarise}\NormalTok{(}\AttributeTok{mean\_rate =} \FunctionTok{mean}\NormalTok{(Rate))}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-## `summarise()` has grouped output by 'Entity'. You can override using the
-## `.groups` argument.
-\end{verbatim}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{death\_cause}\SpecialCharTok{$}\NormalTok{mean\_rate }\OtherTok{\textless{}{-}} \FunctionTok{round}\NormalTok{(death\_cause}\SpecialCharTok{$}\NormalTok{mean\_rate, }\AttributeTok{digits =} \DecValTok{2}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{jp }\OtherTok{\textless{}{-}}\NormalTok{ death\_cause }\SpecialCharTok{\%\textgreater{}\%}
-  \FunctionTok{filter}\NormalTok{(Entity }\SpecialCharTok{==} \StringTok{"New Zealand"}\NormalTok{)}
-
-\FunctionTok{kable}\NormalTok{(jp, }\StringTok{"latex"}\NormalTok{, }\AttributeTok{caption =} \StringTok{"Death rate related to different risk factors in New Zealand"}\NormalTok{, }\AttributeTok{booktabs =}\NormalTok{ T) }\SpecialCharTok{\%\textgreater{}\%}
-  \FunctionTok{kable\_styling}\NormalTok{(}\AttributeTok{latex\_options =} \FunctionTok{c}\NormalTok{(}\StringTok{"striped"}\NormalTok{, }\StringTok{"hold\_position"}\NormalTok{))}
-\end{Highlighting}
-\end{Shaded}
+From table \ref{tab:nz}, we can observe that air pollution contributed most to the death rates in New Zealand with 7 deaths per 100000 people.
 
 \begin{table}[!h]
 
-\caption{\label{tab:jp}Death rate related to different risk factors in New Zealand}
+\caption{\label{tab:nz}Death rate related to different risk factors in New Zealand}
 \centering
 \begin{tabular}[t]{llr}
 \toprule
@@ -454,18 +343,6 @@ New Zealand & Household\_air\_pollution & 0.14\\
 \bottomrule
 \end{tabular}
 \end{table}
-
-From the table \ref{tab:jp} we can see that air pollution contributed most to the death rates in Japan with 13.12 \%, following by ambient particulate matter pollution, ambient ozone pollution and household air pollution from fossil fuels.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{vn }\OtherTok{\textless{}{-}}\NormalTok{ death\_cause }\SpecialCharTok{\%\textgreater{}\%}
-  \FunctionTok{filter}\NormalTok{(Entity }\SpecialCharTok{==} \StringTok{"Vietnam"}\NormalTok{)}
-
-\FunctionTok{kable}\NormalTok{(vn, }\StringTok{"latex"}\NormalTok{, }\AttributeTok{caption =} \StringTok{"Death rate related to different risk factors in Vietnam"}\NormalTok{, }\AttributeTok{booktabs =}\NormalTok{ T) }\SpecialCharTok{\%\textgreater{}\%}
-  \FunctionTok{kable\_styling}\NormalTok{(}\AttributeTok{latex\_options =} \FunctionTok{c}\NormalTok{(}\StringTok{"striped"}\NormalTok{, }\StringTok{"hold\_position"}\NormalTok{))}
-\end{Highlighting}
-\end{Shaded}
 
 \begin{table}[!h]
 
@@ -483,53 +360,53 @@ Vietnam & Household\_air\_pollution & 91.56\\
 \end{tabular}
 \end{table}
 
-Similarly in table \ref{tab:vn}, we can see that air pollution is also the largest cause of pollution in Vietnam, accounting for a total of 131.61\%. The second large contributor is household air pollution from fossil fuels, followed by ambient particulate matter pollution and ambient ozone pollution.
+Similarly, in table \ref{tab:vn}, it can be seen that air pollution is also the leading factor in Vietnam, accounting for 132 deaths per 100000 people.
+
+According to \textcite{mannucci2017health}, there were almost seven million deaths associated with the effects of air pollution. In addition, the impacts tend to be greater across low and middle income countries, mainly due to the increasing shift to industrialization. The notion has been demonstrated in the case of Vietnam and New Zealand, where the number of deaths in Vietnam is approximately 18 times higher than New Zealand.
 
 \hypertarget{q2}{%
-\subsection{Q2:}\label{q2}}
+\subsection{Q2}\label{q2}}
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{jp\_rate }\OtherTok{\textless{}{-}}\NormalTok{ death\_rate }\SpecialCharTok{\%\textgreater{}\%}
-  \FunctionTok{filter}\NormalTok{(Entity }\SpecialCharTok{==} \StringTok{"New Zealand"}\NormalTok{)}
+The graph \ref{fig:nzfig} shows the rate at which people died due to the effects of different types of pollution over a 29-year period from 1990 to 2019.
 
-\NormalTok{p1 }\OtherTok{\textless{}{-}} \FunctionTok{ggplot}\NormalTok{(jp\_rate, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Year, }\AttributeTok{y =}\NormalTok{ Rate, }\AttributeTok{color =}\NormalTok{ Risk\_factor)) }\SpecialCharTok{+}
-  \FunctionTok{geom\_line}\NormalTok{() }\SpecialCharTok{+}
-  \FunctionTok{scale\_x\_continuous}\NormalTok{(}\AttributeTok{breaks =} \FunctionTok{seq}\NormalTok{(}\DecValTok{1990}\NormalTok{, }\DecValTok{2019}\NormalTok{, }\AttributeTok{by=}\DecValTok{2}\NormalTok{)) }\SpecialCharTok{+}
-  \FunctionTok{labs}\NormalTok{(}\AttributeTok{y =} \StringTok{"Death rate"}\NormalTok{) }\SpecialCharTok{+}
-  \FunctionTok{theme}\NormalTok{(}\AttributeTok{axis.text.x =} \FunctionTok{element\_text}\NormalTok{(}\AttributeTok{angle=}\DecValTok{45}\NormalTok{, }\AttributeTok{hjust =} \DecValTok{1}\NormalTok{))}
-\NormalTok{p1}
-\end{Highlighting}
-\end{Shaded}
+There was an overall downward trend in the impacts of air pollution and ambient particulate matter pollution to death rate.
+Rate of people died associated air pollution originated from household and ambient ozone pollution showed a slight decrease over the years.
 
-\includegraphics{Assignment4_files/figure-latex/rate-1.pdf}
+In contrast, the rate at which pollution from ambient ozone contributed to death remained relatively steady.
 
-The graph \ref{fig:rate} shows the rate at which Japanese and Vietnamese people died because of different types of pollution over a 29-year period from 1990 to 2019.
+\begin{figure}[H]
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{vn\_rate }\OtherTok{\textless{}{-}}\NormalTok{ death\_rate }\SpecialCharTok{\%\textgreater{}\%}
-  \FunctionTok{filter}\NormalTok{(Entity }\SpecialCharTok{==} \StringTok{"Vietnam"}\NormalTok{)}
+{\centering \includegraphics{Assignment4_files/figure-latex/nzfig-1} 
 
-\NormalTok{p2 }\OtherTok{\textless{}{-}} \FunctionTok{ggplot}\NormalTok{(vn\_rate, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Year, }\AttributeTok{y =}\NormalTok{ Rate, }\AttributeTok{color =}\NormalTok{ Risk\_factor)) }\SpecialCharTok{+}
-  \FunctionTok{geom\_line}\NormalTok{() }\SpecialCharTok{+}
-  \FunctionTok{scale\_x\_continuous}\NormalTok{(}\AttributeTok{breaks =} \FunctionTok{seq}\NormalTok{(}\DecValTok{1990}\NormalTok{, }\DecValTok{2019}\NormalTok{, }\AttributeTok{by=}\DecValTok{2}\NormalTok{)) }\SpecialCharTok{+}
-  \FunctionTok{labs}\NormalTok{(}\AttributeTok{y =} \StringTok{"Death rate"}\NormalTok{) }\SpecialCharTok{+}
-  \FunctionTok{theme}\NormalTok{(}\AttributeTok{axis.text.x =} \FunctionTok{element\_text}\NormalTok{(}\AttributeTok{angle=}\DecValTok{45}\NormalTok{, }\AttributeTok{hjust =} \DecValTok{1}\NormalTok{))}
-\NormalTok{p2}
-\end{Highlighting}
-\end{Shaded}
+}
 
-\includegraphics{Assignment4_files/figure-latex/unnamed-chunk-5-1.pdf}
+\caption{Death rates attributed to pollution in New Zealand from 1990 to 2019}\label{fig:nzfig}
+\end{figure}
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{gridExtra}\SpecialCharTok{::}\FunctionTok{grid.arrange}\NormalTok{(p1, p2, }\AttributeTok{nrow=}\DecValTok{2}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
+Overall, in \ref{fig:vnfig}, death rate associated with air pollution and pollution resulted from household decreased dramatically over the years.
 
-\includegraphics{Assignment4_files/figure-latex/unnamed-chunk-6-1.pdf}
+However, the rate attributable to pollution from ambient particulate matter pollution showed a noticeable surge despite having a slight drop in 2010.
 
-\printbibliography[title=Conclusion:]
+Similarly, deaths impacted by pollution from ambient ozone contributed to global death showed little or no signs of changing during the period.
+
+\begin{figure}[H]
+
+{\centering \includegraphics{Assignment4_files/figure-latex/vnfig-1} 
+
+}
+
+\caption{Death rates attributed to pollution in Vietnam from 1990 to 2019}\label{fig:vnfig}
+\end{figure}
+
+\hypertarget{conclusion}{%
+\subsection{Conclusion:}\label{conclusion}}
+
+Overall, it is obvious that air pollution is the largest contributor of deaths in both countries.
+
+It can be seen that there was a overall decrease in deaths attributed to air pollution and pollution from household in recent decades.
+
+However, the death rate in Vietnam remained much higher than in New Zealand. \textcite{gordon2014respiratory} explained this by the increase in urbanization and lack of access to clean fuels for cooking in developing nations.
+
+\printbibliography
 
 \end{document}

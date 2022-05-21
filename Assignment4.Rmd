@@ -50,8 +50,12 @@ library(bookdown)
 
 # Section 2
 
+```{r global_options, include=FALSE}
+knitr::opts_chunk$set(fig.pos = 'H')
+```
 
-```{r}
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE}
 death <- read_csv(here::here("Data/death-rates-from-air-pollution.csv"))
 ```
 ## Introduction:
@@ -62,7 +66,7 @@ In this section we will compare the relationship between death rates and differe
 
 *The data set was originated from @owidairpollution.*
 
-```{r}
+```{r,  echo = FALSE, message = FALSE, warning = FALSE}
 death_rate <- death %>%
   filter(Entity %in% c("Vietnam", "New Zealand")) %>%
   rename(Household_air_pollution = "Deaths - Cause: All causes - Risk: Household air pollution from solid fuels - Sex: Both - Age: Age-standardized (Rate)",
@@ -77,7 +81,7 @@ death_rate <- death %>%
                values_to = "Rate")
 ```
 
-# Research question:
+## Research question:
 
 - Q1: Which type of pollution is the most common attribute of death in each country?
 
@@ -85,9 +89,9 @@ death_rate <- death %>%
 
 ## Exploratory Analysis:
 
-- Q1:
+From table \@ref(tab:nz), we can observe that air pollution contributed most to the death rates in New Zealand with 7 deaths per 100000 people.
 
-```{r}
+```{r,  echo = FALSE, message = FALSE, warning = FALSE}
 death_cause <- death_rate %>%
   group_by(Entity, Risk_factor) %>%
   summarise(mean_rate = mean(Rate))
@@ -96,94 +100,71 @@ death_cause$mean_rate <- round(death_cause$mean_rate, digits = 2)
   
 ```
 
-```{r nz}
+```{r nz,  echo = FALSE, message=FALSE, warning=FALSE, fig.pos='H'}
 nz <- death_cause %>%
   filter(Entity == "New Zealand")
 
 kable(nz, "latex", caption = "Death rate related to different risk factors in New Zealand", booktabs = T) %>%
-  kable_styling(latex_options = c("striped", "hold_position"))
+kable_styling(latex_options = c('striped', 'hold_position'))
 ```
 
-From table \@ref(tab:nz), we can observe that air pollution contributed most to the death rates in New Zealand with 7 deaths per 100000 people.
 
 
-```{r vn}
+
+```{r vn,  echo = FALSE, message = FALSE, warning = FALSE, fig.pos='H'}
 vn <- death_cause %>%
   filter(Entity == "Vietnam")
 
-kable(vn, "latex", caption = "Death rate related to different risk factors in Vietnam", booktabs = T) %>%
-  
-  kable_styling(latex_options = c("striped", "hold_position"))
+kable(vn, "latex", caption = "Death rate related to different risk factors in Vietnam", booktabs = T) %>% kable_styling(latex_options = c('striped', 'hold_position'))
 ```
 
 Similarly, in table \@ref(tab:vn), it can be seen that air pollution is also the leading factor in Vietnam, accounting for 132 deaths per 100000 people.
 
 
-According to @ijerph14091048, there were almost seven million deaths associated with the effects of air pollution. In addition, the impacts tend to be greater across low and middle income countries, mainly due to the increasing shift to industrialization. The notion has been demonstrated in the case of Vietnam and New Zealand, where the number of deaths in Vietnam is approximately 18 times higher than New Zealand.
+According to @mannucci2017health, there were almost seven million deaths associated with the effects of air pollution. In addition, the impacts tend to be greater across low and middle income countries, mainly due to the increasing shift to industrialization. The notion has been demonstrated in the case of Vietnam and New Zealand, where the number of deaths in Vietnam is approximately 18 times higher than New Zealand.
 
-- Q2:
+## Q2
 
-```{r rate}
-nz_rate <- death_rate %>%
-  filter(Entity == "New Zealand")
-
-p1 <- ggplot(nz_rate, aes(x = Year, y = Rate, color = Risk_factor)) +
-  geom_line() +
-  scale_x_continuous(breaks = seq(1990, 2019, by=2)) +
-  scale_fill_discrete(breaks = c("Household_air_pollution",
-                                  "Ambient_particulate_matter_pollution",
-                                  "Air_pollution",
-                                  "Ambient_ozone_pollution"),
-                       labels = c("Household air pollution",
-               "Ambient particulate matter pollution",
-               "Air pollution", 
-               "Ambient ozone pollution")) +
-  labs(y = "Death rate",
-       color = "Risk factor") +
-  theme(axis.text.x = element_text(angle=45, hjust = 1)) +
-  ggtitle("Death rates attributed to pollution in New Zealand from 1990 to 2019")
-p1
-```
-
-The graph \@ref(fig:rate) shows the rate at which people died due to the effects of different types of pollution over a 29-year period from 1990 to 2019. 
+The graph \@ref(fig:nzfig) shows the rate at which people died due to the effects of different types of pollution over a 29-year period from 1990 to 2019. 
 
 There was an overall downward trend in the impacts of air pollution and ambient particulate matter pollution to death rate. 
 Rate of people died associated air pollution originated from household and ambient ozone pollution showed a slight decrease over the years.
 
 In contrast, the rate at which pollution from ambient ozone contributed to death remained relatively steady.
 
-```{r death}
-vn_rate <- death_rate %>%
-  filter(Entity == "Vietnam")
+```{r nzfig,  echo = FALSE, message = FALSE, warning = FALSE, fig.cap="Death rates attributed to pollution in New Zealand from 1990 to 2019", fig.pos= 'H', fig.align='center'}
+nz_rate <- death_rate %>%
+  filter(Entity == "New Zealand")
 
-p2 <- ggplot(vn_rate, aes(x = Year, y = Rate, color = Risk_factor)) +
+ggplot(nz_rate, aes(x = Year, y = Rate, color = Risk_factor)) +
   geom_line() +
   scale_x_continuous(breaks = seq(1990, 2019, by=2)) +
-  scale_fill_discrete(breaks = c("Household_air_pollution",
-                                  "Ambient_particulate_matter_pollution",
-                                  "Air_pollution",
-                                  "Ambient_ozone_pollution"),
-                       labels = c("Household air pollution",
-               "Ambient particulate matter pollution",
-               "Air pollution", 
-               "Ambient ozone pollution")) +
   labs(y = "Death rate",
        color = "Risk factor") +
-  labs(y = "Death rate") +
-  theme(axis.text.x = element_text(angle=45, hjust = 1)) +
-  ggtitle("Death rates attributed to pollution in Vietnam from 1990 to 2019")
-p2
-```
+  theme(axis.text.x = element_text(angle=45, hjust = 1))
 
-Overall, death rate associated with air pollution and pollution resulted from household decreased dramatically over the years. 
+```
+Overall, in \@ref(fig:vnfig), death rate associated with air pollution and pollution resulted from household decreased dramatically over the years. 
 
 However, the rate attributable to pollution from ambient particulate matter pollution showed a noticeable surge despite having a slight drop in 2010.
 
 Similarly, deaths impacted by pollution from ambient ozone contributed to global death showed little or no signs of changing during the period.
 
-```{r}
-gridExtra::grid.arrange(p1, p2, nrow=2)
+
+```{r vnfig,  echo = FALSE, message = FALSE, warning = FALSE, fig.cap="Death rates attributed to pollution in Vietnam from 1990 to 2019", fig.pos= 'H', fig.align='center'}
+vn_rate <- death_rate %>%
+  filter(Entity == "Vietnam")
+
+ggplot(vn_rate, aes(x = Year, y = Rate, color = Risk_factor)) +
+  geom_line() +
+  scale_x_continuous(breaks = seq(1990, 2019, by=2)) +
+  labs(y = "Death rate",
+       color = "Risk factor") +
+  labs(y = "Death rate") +
+  theme(axis.text.x = element_text(angle=45, hjust = 1))
 ```
+
+
 
 ## Conclusion:
 
@@ -191,7 +172,7 @@ Overall, it is obvious that air pollution is the largest contributor of deaths i
 
 It can be seen that there was a overall decrease in deaths attributed to air pollution and pollution from household in recent decades. 
 
-However, the death rate in Vietnam remained much higher than in New Zealand. @GORDON2014823 explained this by the increase in urbanization and lack of access to clean fuels for cooking in developing nations.
+However, the death rate in Vietnam remained much higher than in New Zealand. @gordon2014respiratory explained this by the increase in urbanization and lack of access to clean fuels for cooking in developing nations.
 
 
 
