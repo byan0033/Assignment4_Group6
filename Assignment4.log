@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.5.20)  21 MAY 2022 16:57
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.5.20)  21 MAY 2022 17:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1399,18 +1399,18 @@ Package logreq Info: Writing requests to 'Assignment4.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 27486 strings out of 480260
- 481519 string characters out of 5892602
- 1182985 words of memory out of 5000000
- 44735 multiletter control sequences out of 15000+600000
- 574415 words of font info for 251 fonts, out of 8000000 for 9000
+ 27511 strings out of 480260
+ 481954 string characters out of 5892602
+ 1183072 words of memory out of 5000000
+ 44741 multiletter control sequences out of 15000+600000
+ 575479 words of font info for 266 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 72i,14n,93p,1008b,1454s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 72i,14n,93p,1008b,1456s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {c:/Users/PREDATOR/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/ly1/texnansi.enc}{c:/Users/PREDATOR/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/base/8r.enc}{c:/Users/PREDATOR/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/fontawesome/fontawesometwo.enc}<c:/Users/PREDATOR/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/fontawesome/FontAwesome.pfb><c:/Users/PREDATOR/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/bitstrea/charter/bchb8a.pfb><c:/Users/PREDATOR/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/bitstrea/charter/bchr8a.pfb><c:/Users/PREDATOR/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/bitstrea/charter/bchri8a.pfb><c:/Users/PREDATOR/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/bera/fvsb8a.pfb><c:/Users/PREDATOR/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/bera/fvsr8a.pfb>
-Output written on Assignment4.pdf (4 pages, 7515180 bytes).
+Output written on Assignment4.pdf (4 pages, 7518388 bytes).
 PDF statistics:
- 85 PDF objects out of 1000 (max. 8388607)
- 63 compressed objects within 1 object stream
- 15 named destinations out of 1000 (max. 500000)
+ 89 PDF objects out of 1000 (max. 8388607)
+ 67 compressed objects within 1 object stream
+ 16 named destinations out of 1000 (max. 500000)
  86035 words of extra memory for PDF output out of 89155 (max. 10000000)
 
