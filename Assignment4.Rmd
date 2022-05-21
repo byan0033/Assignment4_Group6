@@ -49,3 +49,122 @@ library(bookdown)
 ```
 
 
+# Report Introduction
+
+The research project aims to explore and analyze the numbers and trends of human death caused by various air pollution.
+
+
+# Section 1
+
+```{r , echo = FALSE, message = FALSE, warning = FALSE}
+Origin_data <- read_csv("Data/death-rates-from-air-pollution.csv")
+```
+
+## Introduction
+
+- @owidoutdoorairpollution point out that outdoor air pollution is one of the world's biggest health and environmental problems. The origin data in this section is from Our world in data and is based on the number of deaths caused by air pollution.
+
+- This section is designed to research the four countries with the highest average number of deaths due to air pollution from 1990 to 2019 and to observe the changes in the number of deaths caused by the two main outdoor pollutants.
+
+
+## Research question
+
+Q1:Top four countries with the highest average number of deaths due to air pollution since 1990 to 2019.
+
+Q2:Is air pollution in these four countries improving until 2019? 
+
+Q3:The two main pollutants of outdoor air pollution are ozone and outdoor particulate matter. In the four countries with the highest average number of deaths caused by air pollution, what are the trends in the number of deaths caused by these two pollutants?
+
+## Exploratory data analysis
+
+- Q1
+
+```{r , echo = FALSE}
+Research_data <- Origin_data %>% 
+  rename(Total_air_polution = 
+           "Deaths - Cause: All causes - Risk: Air pollution - Sex: Both - Age: Age-standardized (Rate)",
+         Indoor_air_pollution = 
+           "Deaths - Cause: All causes - Risk: Household air pollution from solid fuels - Sex: Both - Age: Age-standardized (Rate)",
+         Outdoor_particulate_matter = 
+           "Deaths - Cause: All causes - Risk: Ambient particulate matter pollution - Sex: Both - Age: Age-standardized (Rate)",
+         Outdoor_ozone_pollution = 
+           "Deaths - Cause: All causes - Risk: Ambient ozone pollution - Sex: Both - Age: Age-standardized (Rate)")
+
+```
+
+
+```{r , echo = FALSE}
+Q1_data <- Research_data %>% 
+  group_by(Entity) %>% 
+  summarise(mean_total_air_polution = mean(Total_air_polution,na.rm = TRUE)) %>% 
+  arrange(desc(mean_total_air_polution)) %>% 
+  head(4)
+
+```
+
+
+```{r airpollutiontab,echo=FALSE,message = FALSE, warning = FALSE}
+kable(Q1_data, "latex", digits = 2,caption = "Average number of deaths from air pollution, 1990 to 2019", booktabs = T) %>% kable_styling(latex_options = c("striped", "hold_position", "scale_down"))
+```
+
+In table \@ref(tab:airpollutiontab), the four countries with the highest average number of deaths (per 100,000  population) due to air pollution are `r Q1_data$Entity[1]`,`r Q1_data$Entity[2]`,`r Q1_data$Entity[3]`,and `r Q1_data$Entity[4]`.
+
+- Q2
+
+```{r airpollutionfig, echo = FALSE,message = FALSE, warning = FALSE, fig.align = "center", fig.width = 6,fig.height=7, fig.cap = "Air pollution trends in different countries", fig.pos="H"}
+
+Q2_data_1 <- Research_data %>% 
+  filter(Entity %in% c("Solomon Islands","Afghanistan","Central African Republic","Somalia")) %>% 
+  select(Entity,Year,Total_air_polution,Indoor_air_pollution)
+
+Q2_figure_1 <- ggplot(Q2_data_1,aes(x = Year,
+                     y = Total_air_polution,
+                     color = Entity))+
+  geom_line()+
+  ylab("The number of deaths from air pollution")+
+  ggtitle("Total air pollution")
+
+Q2_figure_2 <- ggplot(Q2_data_1,aes(x = Year,
+                     y = Indoor_air_pollution,
+                     color = Entity))+
+  geom_line()+
+  ylab("The number of deaths from air pollution")+
+  ggtitle("Indoor air pollution")
+
+gridExtra::grid.arrange(Q2_figure_1,Q2_figure_2)
+    
+```
+
+
+In figure \@ref(fig:airpollutionfig), I found significant improvements in total air pollution in these four countries, and a continuous downward trend in the number of deaths caused by indoor air pollution.
+
+- Q3
+
+```{r trendsfig, echo = FALSE,message = FALSE, warning = FALSE, fig.align = "center", fig.width = 6, fig.cap = "The trends in the number of deaths caused by these two pollutants", fig.pos="H"}
+Q2_data_2 <- Research_data %>% 
+ filter(Entity %in% c("Solomon Islands","Afghanistan","Central African Republic","Somalia")) %>% 
+  select(Entity,Year,Outdoor_particulate_matter, Outdoor_ozone_pollution) %>% 
+   pivot_longer(cols = c(Outdoor_particulate_matter, Outdoor_ozone_pollution),
+              names_to = "Air_pollution_type",
+              values_to = "The_number_of_deaths")
+
+ggplot(Q2_data_2,aes(x = Year,
+                   y = The_number_of_deaths,
+                   color = Air_pollution_type))+
+  geom_line()+
+  facet_wrap(~Entity,nrow = 4,scales = "free")+
+  ylab("The number of deaths (per 100,000 ppl)")
+  
+```
+
+In figure \@ref(fig:trendsfig), I found a small increase in the number of deaths caused by particulate pollution in Solomon Islands,Central African Republic and Afghanistan, while only a very small number of people in Somalia die from outdoor pollution.
+
+
+# Conclusion 
+
+From the above studies, I conclude that the number of deaths due to indoor air pollution has declined in most countries in recent decades. However, the number of deaths due to outdoor air pollution, such as outdoor particulate matter, is still on the rise. Therefore, @neidell2004air indicated that the world should regularly monitor air quality and reduce sources of particulate pollution.
+
+
+
+
+

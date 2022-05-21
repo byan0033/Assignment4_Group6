@@ -1,0 +1,86 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nyt/global//global/global}
+    \entry{neidell2004air}{article}{}
+      \name{author}{1}{}{%
+        {{hash=668356f7d7d22b842c2fe9265fb36219}{%
+           family={Neidell},
+           familyi={N\bibinitperiod},
+           given={Matthew\bibnamedelima J},
+           giveni={M\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{668356f7d7d22b842c2fe9265fb36219}
+      \strng{fullhash}{668356f7d7d22b842c2fe9265fb36219}
+      \strng{bibnamehash}{668356f7d7d22b842c2fe9265fb36219}
+      \strng{authorbibnamehash}{668356f7d7d22b842c2fe9265fb36219}
+      \strng{authornamehash}{668356f7d7d22b842c2fe9265fb36219}
+      \strng{authorfullhash}{668356f7d7d22b842c2fe9265fb36219}
+      \field{sortinit}{N}
+      \field{sortinithash}{22369a73d5f88983a108b63f07f37084}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of health economics}
+      \field{number}{6}
+      \field{title}{Air pollution, health, and socio-economic status: the effect of outdoor air quality on childhood asthma}
+      \field{volume}{23}
+      \field{year}{2004}
+      \field{pages}{1209\bibrangedash 1236}
+      \range{pages}{28}
+    \endentry
+    \entry{owidoutdoorairpollution}{article}{}
+      \name{author}{2}{}{%
+        {{hash=a6d904a648976069036f5eddb4ad0151}{%
+           family={Ritchie},
+           familyi={R\bibinitperiod},
+           given={Hannah},
+           giveni={H\bibinitperiod}}}%
+        {{hash=c0e5ce1b546c571edc443f6a4f166170}{%
+           family={Roser},
+           familyi={R\bibinitperiod},
+           given={Max},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{1ec70e8735b90fe70ff5f815fa23d439}
+      \strng{fullhash}{1ec70e8735b90fe70ff5f815fa23d439}
+      \strng{bibnamehash}{1ec70e8735b90fe70ff5f815fa23d439}
+      \strng{authorbibnamehash}{1ec70e8735b90fe70ff5f815fa23d439}
+      \strng{authornamehash}{1ec70e8735b90fe70ff5f815fa23d439}
+      \strng{authorfullhash}{1ec70e8735b90fe70ff5f815fa23d439}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Our World in Data}
+      \field{note}{https://ourworldindata.org/outdoor-air-pollution}
+      \field{title}{Outdoor Air Pollution}
+      \field{year}{2019}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
