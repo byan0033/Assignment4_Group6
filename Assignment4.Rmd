@@ -54,7 +54,7 @@ library(bookdown)
 ```{r}
 death <- read_csv(here::here("Data/death-rates-from-air-pollution.csv"))
 ```
-# Introduction:
+## Introduction:
 
 Pollution is not only the leading factor taking away peoples’ lives, it also also leaves serious long-term effects on our living quality. 
 
@@ -82,6 +82,44 @@ death_rate <- death %>%
 - Q1: Which type of pollution is the most common attribute of death in each country?
 
 - Q2: How did the death rates associated with different types of pollution change over the years in both countries?
+
+## Exploratory Analysis:
+
+- Q1:
+
+```{r}
+death_cause <- death_rate %>%
+  group_by(Entity, Risk_factor) %>%
+  summarise(mean_rate = mean(Rate))
+  
+death_cause$mean_rate <- round(death_cause$mean_rate, digits = 2)
+  
+```
+
+```{r nz}
+nz <- death_cause %>%
+  filter(Entity == "New Zealand")
+
+kable(nz, "latex", caption = "Death rate related to different risk factors in New Zealand", booktabs = T) %>%
+  kable_styling(latex_options = c("striped", "hold_position"))
+```
+
+From table \@ref(tab:nz), we can observe that air pollution contributed most to the death rates in New Zealand with 7 deaths per 100000 people.
+
+
+```{r vn}
+vn <- death_cause %>%
+  filter(Entity == "Vietnam")
+
+kable(vn, "latex", caption = "Death rate related to different risk factors in Vietnam", booktabs = T) %>%
+  
+  kable_styling(latex_options = c("striped", "hold_position"))
+```
+
+Similarly, in table \@ref(tab:vn), it can be seen that air pollution is also the leading factor in Vietnam, accounting for 132 deaths per 100000 people.
+
+
+According to @ijerph14091048, there were almost seven million deaths associated with the effects of air pollution. In addition, the impacts tend to be greater across low and middle income countries, mainly due to the increasing shift to industrialization. The notion has been demonstrated in the case of Vietnam and New Zealand, where the number of deaths in Vietnam is approximately 18 times higher than New Zealand.
 
 
 
