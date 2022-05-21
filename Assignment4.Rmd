@@ -1,5 +1,5 @@
 ---
-title: "Assignment3_Group6"
+title: "Assignment4_Group6"
 author:
 - familyname: Makornkhan
   othernames: Chatpisut
@@ -45,7 +45,50 @@ library(tidyverse)
 library(readr)
 library(kableExtra)
 library(bookdown)
-
 ```
+\section*{Vietnam and New Zealand}
+
+# Section 2
+
+
+```{r}
+death <- read_csv(here::here("Data/death-rates-from-air-pollution.csv"))
+```
+# Introduction:
+
+Pollution is not only the leading factor that takes away peoples’ lives, it also also leaves considerable effects on our living quality. 
+
+In this section we will compare the relationship between death rates and different types of pollution from 1990 to 2019 in two countries, Vietnam and New Zealand.
+
+*The data set was originated from @owidairpollution.*
+
+```{r}
+death_rate <- death %>%
+  filter(Entity %in% c("Vietnam", "New Zealand")) %>%
+  rename(Household_air_pollution = "Deaths - Cause: All causes - Risk: Household air pollution from solid fuels - Sex: Both - Age: Age-standardized (Rate)",
+         Ambient_particulate_matter_pollution = "Deaths - Cause: All causes - Risk: Ambient particulate matter pollution - Sex: Both - Age: Age-standardized (Rate)",
+         Air_pollution = "Deaths - Cause: All causes - Risk: Air pollution - Sex: Both - Age: Age-standardized (Rate)",
+         Ambient_ozone_pollution = "Deaths - Cause: All causes - Risk: Ambient ozone pollution - Sex: Both - Age: Age-standardized (Rate)") %>%
+  pivot_longer(cols = c("Household_air_pollution",
+               "Ambient_particulate_matter_pollution",
+               "Air_pollution", 
+               "Ambient_ozone_pollution"),
+               names_to = "Risk_factor",
+               values_to = "Rate")
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
