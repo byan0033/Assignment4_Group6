@@ -177,11 +177,21 @@ p2
 
 Overall, death rate associated with air pollution and pollution resulted from household decreased dramatically over the years. 
 
-However, the rate attributable to pollution from ambient ozone pollution showed an noticeable surge despite having a slight drop in 2010.
+However, the rate attributable to pollution from ambient particulate matter pollution showed a noticeable surge despite having a slight drop in 2010.
 
 Similarly, deaths impacted by pollution from ambient ozone contributed to global death showed little or no signs of changing during the period.
 
+```{r}
+gridExtra::grid.arrange(p1, p2, nrow=2)
+```
 
+## Conclusion:
+
+Overall, it is obvious that air pollution is the largest contributor of deaths in both countries.
+
+It can be seen that there was a overall decrease in deaths attributed to air pollution and pollution from household in recent decades. 
+
+However, the death rate in Vietnam remained much higher than in New Zealand. @GORDON2014823 explained this by the increase in urbanization and lack of access to clean fuels for cooking in developing nations.
 
 
 
