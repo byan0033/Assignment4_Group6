@@ -1,15 +1,15 @@
 [0] Config.pm:307> INFO - This is Biber 2.17
 [0] Config.pm:310> INFO - Logfile is 'Assignment4.blg'
-[120] biber-darwin:340> INFO - === Sat May 21, 2022, 17:53:19
-[152] Biber.pm:418> INFO - Reading 'Assignment4.bcf'
-[281] Biber.pm:972> INFO - Found 2 citekeys in bib section 0
-[304] Biber.pm:4383> INFO - Processing section 0
-[327] Biber.pm:4574> INFO - Looking for bibtex file 'references.bib' for section 0
-[330] bibtex.pm:1713> INFO - LaTeX decoding ...
-[338] bibtex.pm:1518> INFO - Found BibTeX data source 'references.bib'
-[412] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[412] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[412] Biber.pm:4203> INFO - Sorting list 'nyt/global//global/global' of type 'entry' with template 'nyt' and locale 'en-US'
-[412] Biber.pm:4209> INFO - No sort tailoring available for locale 'en-US'
-[417] bbl.pm:654> INFO - Writing 'Assignment4.bbl' with encoding 'UTF-8'
-[418] bbl.pm:757> INFO - Output to Assignment4.bbl
+[216] biber-MSWIN32:340> INFO - === 
+[308] Biber.pm:418> INFO - Reading 'Assignment4.bcf'
+[570] Biber.pm:972> INFO - Found 5 citekeys in bib section 0
+[607] Biber.pm:4383> INFO - Processing section 0
+[627] Biber.pm:4574> INFO - Looking for bibtex file 'references.bib' for section 0
+[720] bibtex.pm:1713> INFO - LaTeX decoding ...
+[745] bibtex.pm:1518> INFO - Found BibTeX data source 'references.bib'
+[867] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[868] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[868] Biber.pm:4203> INFO - Sorting list 'nyt/global//global/global' of type 'entry' with template 'nyt' and locale 'en-US'
+[868] Biber.pm:4209> INFO - No sort tailoring available for locale 'en-US'
+[877] bbl.pm:654> INFO - Writing 'Assignment4.bbl' with encoding 'UTF-8'
+[886] bbl.pm:757> INFO - Output to Assignment4.bbl

@@ -2349,8 +2349,17 @@
     <bcf:citekey order="2">owidoutdoorairpollution</bcf:citekey>
     <bcf:citekey order="3">neidell2004air</bcf:citekey>
     <bcf:citekey order="4">neidell2004air</bcf:citekey>
-    <bcf:citekey order="5">owidoutdoorairpollution</bcf:citekey>
-    <bcf:citekey order="6">neidell2004air</bcf:citekey>
+    <bcf:citekey order="5">owidairpollution</bcf:citekey>
+    <bcf:citekey order="6">owidairpollution</bcf:citekey>
+    <bcf:citekey order="7">mannucci2017health</bcf:citekey>
+    <bcf:citekey order="8">mannucci2017health</bcf:citekey>
+    <bcf:citekey order="9">gordon2014respiratory</bcf:citekey>
+    <bcf:citekey order="10">gordon2014respiratory</bcf:citekey>
+    <bcf:citekey order="11">owidoutdoorairpollution</bcf:citekey>
+    <bcf:citekey order="12">neidell2004air</bcf:citekey>
+    <bcf:citekey order="13">owidairpollution</bcf:citekey>
+    <bcf:citekey order="14">mannucci2017health</bcf:citekey>
+    <bcf:citekey order="15">gordon2014respiratory</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nyt">

@@ -21,7 +21,7 @@
 \PassOptionsToPackage{hyphens}{url} % url is loaded by hyperref
 \usepackage[unicode=true]{hyperref}
 \hypersetup{
-            pdftitle={Assignment3\_Group6},
+            pdftitle={Assignment4\_Group6},
             pdfborder={0 0 0},
             breaklinks=true}
 \urlstyle{same}  % don't use monospace font for urls
@@ -49,7 +49,7 @@
 \makeatother
 
 
-\title{Assignment3\_Group6}
+\title{Assignment4\_Group6}
 
 %% MONASH STUFF
 
@@ -392,6 +392,114 @@ In figure \ref{fig:trendsfig}, I found a small increase in the number of deaths 
 \section{Conclusion}\label{conclusion}}
 
 From the above studies, I conclude that the number of deaths due to indoor air pollution has declined in most countries in recent decades. However, the number of deaths due to outdoor air pollution, such as outdoor particulate matter, is still on the rise. Therefore, \textcite{neidell2004air} indicated that the world should regularly monitor air quality and reduce sources of particulate pollution.
+
+\section*{Vietnam and New Zealand}
+
+\hypertarget{section-2}{%
+\section{Section 2}\label{section-2}}
+
+\hypertarget{introduction-1}{%
+\subsection{Introduction:}\label{introduction-1}}
+
+Pollution is not only the leading factor taking away peoples' lives, it also also leaves serious long-term effects on our living quality.
+
+In this section we will compare the relationship between death rates and different types of pollution from 1990 to 2019 in two countries, Vietnam and New Zealand.
+
+\emph{The data set was originated from \textcite{owidairpollution}.}
+
+\hypertarget{research-question-1}{%
+\subsection{Research question:}\label{research-question-1}}
+
+\begin{itemize}
+\item
+  Q1: Which type of pollution is the most common attribute of death in each country?
+\item
+  Q2: How did the death rates associated with different types of pollution change over the years in both countries?
+\end{itemize}
+
+\hypertarget{exploratory-analysis}{%
+\subsection{Exploratory Analysis:}\label{exploratory-analysis}}
+
+From table \ref{tab:nz}, we can observe that air pollution contributed most to the death rates in New Zealand with 7 deaths per 100000 people.
+
+\begin{table}[!h]
+
+\caption{\label{tab:nz}Death rate related to different risk factors in New Zealand}
+\centering
+\begin{tabular}[t]{llr}
+\toprule
+Entity & Risk\_factor & mean\_rate\\
+\midrule
+\cellcolor{gray!6}{New Zealand} & \cellcolor{gray!6}{Air\_pollution} & \cellcolor{gray!6}{7.11}\\
+New Zealand & Ambient\_ozone\_pollution & 0.20\\
+\cellcolor{gray!6}{New Zealand} & \cellcolor{gray!6}{Ambient\_particulate\_matter\_pollution} & \cellcolor{gray!6}{6.77}\\
+New Zealand & Household\_air\_pollution & 0.14\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[!h]
+
+\caption{\label{tab:vn}Death rate related to different risk factors in Vietnam}
+\centering
+\begin{tabular}[t]{llr}
+\toprule
+Entity & Risk\_factor & mean\_rate\\
+\midrule
+\cellcolor{gray!6}{Vietnam} & \cellcolor{gray!6}{Air\_pollution} & \cellcolor{gray!6}{131.61}\\
+Vietnam & Ambient\_ozone\_pollution & 1.74\\
+\cellcolor{gray!6}{Vietnam} & \cellcolor{gray!6}{Ambient\_particulate\_matter\_pollution} & \cellcolor{gray!6}{38.99}\\
+Vietnam & Household\_air\_pollution & 91.56\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Similarly, in table \ref{tab:vn}, it can be seen that air pollution is also the leading factor in Vietnam, accounting for 132 deaths per 100000 people.
+
+According to \textcite{mannucci2017health}, there were almost seven million deaths associated with the effects of air pollution. In addition, the impacts tend to be greater across low and middle income countries, mainly due to the increasing shift to industrialization. The notion has been demonstrated in the case of Vietnam and New Zealand, where the number of deaths in Vietnam is approximately 18 times higher than New Zealand.
+
+\hypertarget{q2}{%
+\subsection{Q2}\label{q2}}
+
+The graph \ref{fig:nzfig} shows the rate at which people died due to the effects of different types of pollution over a 29-year period from 1990 to 2019.
+
+There was an overall downward trend in the impacts of air pollution and ambient particulate matter pollution to death rate.
+Rate of people died associated air pollution originated from household and ambient ozone pollution showed a slight decrease over the years.
+
+In contrast, the rate at which pollution from ambient ozone contributed to death remained relatively steady.
+
+\begin{figure}[H]
+
+{\centering \includegraphics{Assignment4_files/figure-latex/nzfig-1} 
+
+}
+
+\caption{Death rates attributed to pollution in New Zealand from 1990 to 2019}\label{fig:nzfig}
+\end{figure}
+
+Overall, in \ref{fig:vnfig}, death rate associated with air pollution and pollution resulted from household decreased dramatically over the years.
+
+However, the rate attributable to pollution from ambient particulate matter pollution showed a noticeable surge despite having a slight drop in 2010.
+
+Similarly, deaths impacted by pollution from ambient ozone contributed to global death showed little or no signs of changing during the period.
+
+\begin{figure}[H]
+
+{\centering \includegraphics{Assignment4_files/figure-latex/vnfig-1} 
+
+}
+
+\caption{Death rates attributed to pollution in Vietnam from 1990 to 2019}\label{fig:vnfig}
+\end{figure}
+
+\hypertarget{conclusion-1}{%
+\subsection{Conclusion:}\label{conclusion-1}}
+
+Overall, it is obvious that air pollution is the largest contributor of deaths in both countries.
+
+It can be seen that there was a overall decrease in deaths attributed to air pollution and pollution from household in recent decades.
+
+However, the death rate in Vietnam remained much higher than in New Zealand. \textcite{gordon2014respiratory} explained this by the increase in urbanization and lack of access to clean fuels for cooking in developing nations.
 
 \printbibliography
 

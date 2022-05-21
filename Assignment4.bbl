@@ -19,6 +19,120 @@
 
 \refsection{0}
   \datalist[entry]{nyt/global//global/global}
+    \entry{gordon2014respiratory}{article}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{10}{}{%
+        {{hash=709b3d8bf66341901c50ceb9e430b972}{%
+           family={Gordon},
+           familyi={G\bibinitperiod},
+           given={Stephen\bibnamedelima B},
+           giveni={S\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+        {{hash=59f97be2154e42c9c12849d1149671a6}{%
+           family={Bruce},
+           familyi={B\bibinitperiod},
+           given={Nigel\bibnamedelima G},
+           giveni={N\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+        {{hash=14990f97ecb2c24a4e3a00199d8f04b3}{%
+           family={Grigg},
+           familyi={G\bibinitperiod},
+           given={Jonathan},
+           giveni={J\bibinitperiod}}}%
+        {{hash=e2eb5b169bd4f6829f62fb09c0d3f987}{%
+           family={Hibberd},
+           familyi={H\bibinitperiod},
+           given={Patricia\bibnamedelima L},
+           giveni={P\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+        {{hash=92c495b9529d7fec2e8948a975de1645}{%
+           family={Kurmi},
+           familyi={K\bibinitperiod},
+           given={Om\bibnamedelima P},
+           giveni={O\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=df401fbae0ccf4ba7adb54d9718a8dac}{%
+           family={Lam},
+           familyi={L\bibinitperiod},
+           given={Kin-bong\bibnamedelima Hubert},
+           giveni={K\bibinithyphendelim b\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+        {{hash=eaa8f81a2c986e36f4c4dec7b8b7f75e}{%
+           family={Mortimer},
+           familyi={M\bibinitperiod},
+           given={Kevin},
+           giveni={K\bibinitperiod}}}%
+        {{hash=85f1ece166c6c56d4caad899c5cf89dd}{%
+           family={Asante},
+           familyi={A\bibinitperiod},
+           given={Kwaku\bibnamedelima Poku},
+           giveni={K\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=30151808802366ea464e001cf765a364}{%
+           family={Balakrishnan},
+           familyi={B\bibinitperiod},
+           given={Kalpana},
+           giveni={K\bibinitperiod}}}%
+        {{hash=115d92fcf1a26d114219bbdd301adec0}{%
+           family={Balmes},
+           familyi={B\bibinitperiod},
+           given={John},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{ea3c008619723620f35f1af3067be1f5}
+      \strng{fullhash}{9084ebd9f879b59e5f8fa8e130f32a54}
+      \strng{bibnamehash}{9084ebd9f879b59e5f8fa8e130f32a54}
+      \strng{authorbibnamehash}{9084ebd9f879b59e5f8fa8e130f32a54}
+      \strng{authornamehash}{ea3c008619723620f35f1af3067be1f5}
+      \strng{authorfullhash}{9084ebd9f879b59e5f8fa8e130f32a54}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{The Lancet Respiratory Medicine}
+      \field{number}{10}
+      \field{title}{Respiratory risks from household air pollution in low and middle income countries}
+      \field{volume}{2}
+      \field{year}{2014}
+      \field{pages}{823\bibrangedash 860}
+      \range{pages}{38}
+    \endentry
+    \entry{mannucci2017health}{article}{}
+      \name{author}{2}{}{%
+        {{hash=51889f7d71a7efb22e446c7220b334a8}{%
+           family={Mannucci},
+           familyi={M\bibinitperiod},
+           given={Pier\bibnamedelima Mannuccio},
+           giveni={P\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=6a62f1db5b5fe5ba432b893ff3f3034b}{%
+           family={Franchini},
+           familyi={F\bibinitperiod},
+           given={Massimo},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Multidisciplinary Digital Publishing Institute}%
+      }
+      \strng{namehash}{23b88d95cb81029587f8eb2969b6bbfb}
+      \strng{fullhash}{23b88d95cb81029587f8eb2969b6bbfb}
+      \strng{bibnamehash}{23b88d95cb81029587f8eb2969b6bbfb}
+      \strng{authorbibnamehash}{23b88d95cb81029587f8eb2969b6bbfb}
+      \strng{authornamehash}{23b88d95cb81029587f8eb2969b6bbfb}
+      \strng{authorfullhash}{23b88d95cb81029587f8eb2969b6bbfb}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{International journal of environmental research and public health}
+      \field{number}{9}
+      \field{title}{Health effects of ambient air pollution in developing countries}
+      \field{volume}{14}
+      \field{year}{2017}
+      \field{pages}{1048}
+      \range{pages}{1}
+    \endentry
     \entry{neidell2004air}{article}{}
       \name{author}{1}{}{%
         {{hash=668356f7d7d22b842c2fe9265fb36219}{%
@@ -50,6 +164,37 @@
       \field{pages}{1209\bibrangedash 1236}
       \range{pages}{28}
     \endentry
+    \entry{owidairpollution}{article}{}
+      \name{author}{2}{}{%
+        {{hash=a6d904a648976069036f5eddb4ad0151}{%
+           family={Ritchie},
+           familyi={R\bibinitperiod},
+           given={Hannah},
+           giveni={H\bibinitperiod}}}%
+        {{hash=c0e5ce1b546c571edc443f6a4f166170}{%
+           family={Roser},
+           familyi={R\bibinitperiod},
+           given={Max},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{1ec70e8735b90fe70ff5f815fa23d439}
+      \strng{fullhash}{1ec70e8735b90fe70ff5f815fa23d439}
+      \strng{bibnamehash}{1ec70e8735b90fe70ff5f815fa23d439}
+      \strng{authorbibnamehash}{1ec70e8735b90fe70ff5f815fa23d439}
+      \strng{authornamehash}{1ec70e8735b90fe70ff5f815fa23d439}
+      \strng{authorfullhash}{1ec70e8735b90fe70ff5f815fa23d439}
+      \field{extraname}{1}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Our World in Data}
+      \field{note}{https://ourworldindata.org/air-pollution}
+      \field{title}{Air Pollution}
+      \field{year}{2017}
+    \endentry
     \entry{owidoutdoorairpollution}{article}{}
       \name{author}{2}{}{%
         {{hash=a6d904a648976069036f5eddb4ad0151}{%
@@ -69,6 +214,7 @@
       \strng{authorbibnamehash}{1ec70e8735b90fe70ff5f815fa23d439}
       \strng{authornamehash}{1ec70e8735b90fe70ff5f815fa23d439}
       \strng{authorfullhash}{1ec70e8735b90fe70ff5f815fa23d439}
+      \field{extraname}{2}
       \field{sortinit}{R}
       \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
       \field{extradatescope}{labelyear}

@@ -1,5 +1,5 @@
 ---
-title: "Assignment3_Group6"
+title: "Assignment4_Group6"
 author:
 - familyname: Makornkhan
   othernames: Chatpisut
@@ -45,8 +45,9 @@ library(tidyverse)
 library(readr)
 library(kableExtra)
 library(bookdown)
-
 ```
+
+
 
 
 # Report Introduction
@@ -57,7 +58,8 @@ The research project aims to explore and analyze the numbers and trends of human
 # Section 1
 
 ```{r , echo = FALSE, message = FALSE, warning = FALSE}
-Origin_data <- read_csv("Data/death-rates-from-air-pollution.csv")
+Origin_data <- read_csv(here::here("Data/death-rates-from-air-pollution.csv"))
+
 ```
 
 ## Introduction
@@ -163,6 +165,140 @@ In figure \@ref(fig:trendsfig), I found a small increase in the number of deaths
 # Conclusion 
 
 From the above studies, I conclude that the number of deaths due to indoor air pollution has declined in most countries in recent decades. However, the number of deaths due to outdoor air pollution, such as outdoor particulate matter, is still on the rise. Therefore, @neidell2004air indicated that the world should regularly monitor air quality and reduce sources of particulate pollution.
+
+\section*{Vietnam and New Zealand}
+
+# Section 2
+
+```{r global_options, include=FALSE}
+knitr::opts_chunk$set(fig.pos = 'H')
+```
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE}
+death <- read_csv(here::here("Data/death-rates-from-air-pollution.csv"))
+```
+
+## Introduction:
+
+Pollution is not only the leading factor taking away peoples’ lives, it also also leaves serious long-term effects on our living quality. 
+
+In this section we will compare the relationship between death rates and different types of pollution from 1990 to 2019 in two countries, Vietnam and New Zealand.
+
+*The data set was originated from @owidairpollution.*
+
+```{r,  echo = FALSE, message = FALSE, warning = FALSE}
+death_rate <- death %>%
+  filter(Entity %in% c("Vietnam", "New Zealand")) %>%
+  rename(Household_air_pollution = "Deaths - Cause: All causes - Risk: Household air pollution from solid fuels - Sex: Both - Age: Age-standardized (Rate)",
+         Ambient_particulate_matter_pollution = "Deaths - Cause: All causes - Risk: Ambient particulate matter pollution - Sex: Both - Age: Age-standardized (Rate)",
+         Air_pollution = "Deaths - Cause: All causes - Risk: Air pollution - Sex: Both - Age: Age-standardized (Rate)",
+         Ambient_ozone_pollution = "Deaths - Cause: All causes - Risk: Ambient ozone pollution - Sex: Both - Age: Age-standardized (Rate)") %>%
+  pivot_longer(cols = c("Household_air_pollution",
+               "Ambient_particulate_matter_pollution",
+               "Air_pollution", 
+               "Ambient_ozone_pollution"),
+               names_to = "Risk_factor",
+               values_to = "Rate")
+```
+
+## Research question:
+
+- Q1: Which type of pollution is the most common attribute of death in each country?
+
+- Q2: How did the death rates associated with different types of pollution change over the years in both countries?
+
+## Exploratory Analysis:
+
+From table \@ref(tab:nz), we can observe that air pollution contributed most to the death rates in New Zealand with 7 deaths per 100000 people.
+
+```{r,  echo = FALSE, message = FALSE, warning = FALSE}
+death_cause <- death_rate %>%
+  group_by(Entity, Risk_factor) %>%
+  summarise(mean_rate = mean(Rate))
+  
+death_cause$mean_rate <- round(death_cause$mean_rate, digits = 2)
+  
+```
+
+```{r nz,  echo = FALSE, message=FALSE, warning=FALSE, fig.pos='H'}
+nz <- death_cause %>%
+  filter(Entity == "New Zealand")
+
+kable(nz, "latex", caption = "Death rate related to different risk factors in New Zealand", booktabs = T) %>%
+kable_styling(latex_options = c('striped', 'hold_position'))
+```
+
+
+
+
+```{r vn,  echo = FALSE, message = FALSE, warning = FALSE, fig.pos='H'}
+vn <- death_cause %>%
+  filter(Entity == "Vietnam")
+
+kable(vn, "latex", caption = "Death rate related to different risk factors in Vietnam", booktabs = T) %>% kable_styling(latex_options = c('striped', 'hold_position'))
+```
+
+Similarly, in table \@ref(tab:vn), it can be seen that air pollution is also the leading factor in Vietnam, accounting for 132 deaths per 100000 people.
+
+
+According to @mannucci2017health, there were almost seven million deaths associated with the effects of air pollution. In addition, the impacts tend to be greater across low and middle income countries, mainly due to the increasing shift to industrialization. The notion has been demonstrated in the case of Vietnam and New Zealand, where the number of deaths in Vietnam is approximately 18 times higher than New Zealand.
+
+## Q2
+
+The graph \@ref(fig:nzfig) shows the rate at which people died due to the effects of different types of pollution over a 29-year period from 1990 to 2019. 
+
+There was an overall downward trend in the impacts of air pollution and ambient particulate matter pollution to death rate. 
+Rate of people died associated air pollution originated from household and ambient ozone pollution showed a slight decrease over the years.
+
+In contrast, the rate at which pollution from ambient ozone contributed to death remained relatively steady.
+
+```{r nzfig,  echo = FALSE, message = FALSE, warning = FALSE, fig.cap="Death rates attributed to pollution in New Zealand from 1990 to 2019", fig.pos= 'H', fig.align='center'}
+nz_rate <- death_rate %>%
+  filter(Entity == "New Zealand")
+
+ggplot(nz_rate, aes(x = Year, y = Rate, color = Risk_factor)) +
+  geom_line() +
+  scale_x_continuous(breaks = seq(1990, 2019, by=2)) +
+  labs(y = "Death rate",
+       color = "Risk factor") +
+  theme(axis.text.x = element_text(angle=45, hjust = 1))
+
+```
+Overall, in \@ref(fig:vnfig), death rate associated with air pollution and pollution resulted from household decreased dramatically over the years. 
+
+However, the rate attributable to pollution from ambient particulate matter pollution showed a noticeable surge despite having a slight drop in 2010.
+
+Similarly, deaths impacted by pollution from ambient ozone contributed to global death showed little or no signs of changing during the period.
+
+
+```{r vnfig,  echo = FALSE, message = FALSE, warning = FALSE, fig.cap="Death rates attributed to pollution in Vietnam from 1990 to 2019", fig.pos= 'H', fig.align='center'}
+vn_rate <- death_rate %>%
+  filter(Entity == "Vietnam")
+
+ggplot(vn_rate, aes(x = Year, y = Rate, color = Risk_factor)) +
+  geom_line() +
+  scale_x_continuous(breaks = seq(1990, 2019, by=2)) +
+  labs(y = "Death rate",
+       color = "Risk factor") +
+  labs(y = "Death rate") +
+  theme(axis.text.x = element_text(angle=45, hjust = 1))
+```
+
+
+
+## Conclusion:
+
+Overall, it is obvious that air pollution is the largest contributor of deaths in both countries.
+
+It can be seen that there was a overall decrease in deaths attributed to air pollution and pollution from household in recent decades. 
+
+However, the death rate in Vietnam remained much higher than in New Zealand. @gordon2014respiratory explained this by the increase in urbanization and lack of access to clean fuels for cooking in developing nations.
+
+
+
+
+
+
 
 
 

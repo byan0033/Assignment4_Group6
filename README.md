@@ -17,5 +17,12 @@ The research project aims to explore and analyze the numbers and trends of human
 
 - Outdoor_ozone_pollution:Deaths due to outdoor ozone pollution (per 100,000 population)
 
-
 - Total_air_pollution: Deaths due to total air pollution (per 100,000 population)
+
+- Household_air_pollution = Death rates caused by air pollution from household, per 100,000 people
+
+- Ambient_particulate_matter_pollution = Death rates caused by ambient particulate matter pollution, per 100,000 people
+
+- Air_pollution = Death rates caused by air pollution, per 100,000 people
+
+- Ambient_ozone_pollution = Death rates caused by ambient ozone pollution, per 100,000 people
