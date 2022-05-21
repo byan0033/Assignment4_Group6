@@ -121,6 +121,36 @@ Similarly, in table \@ref(tab:vn), it can be seen that air pollution is also the
 
 According to @ijerph14091048, there were almost seven million deaths associated with the effects of air pollution. In addition, the impacts tend to be greater across low and middle income countries, mainly due to the increasing shift to industrialization. The notion has been demonstrated in the case of Vietnam and New Zealand, where the number of deaths in Vietnam is approximately 18 times higher than New Zealand.
 
+- Q2:
+
+```{r rate}
+nz_rate <- death_rate %>%
+  filter(Entity == "New Zealand")
+
+p1 <- ggplot(nz_rate, aes(x = Year, y = Rate, color = Risk_factor)) +
+  geom_line() +
+  scale_x_continuous(breaks = seq(1990, 2019, by=2)) +
+  scale_fill_discrete(breaks = c("Household_air_pollution",
+                                  "Ambient_particulate_matter_pollution",
+                                  "Air_pollution",
+                                  "Ambient_ozone_pollution"),
+                       labels = c("Household air pollution",
+               "Ambient particulate matter pollution",
+               "Air pollution", 
+               "Ambient ozone pollution")) +
+  labs(y = "Death rate",
+       color = "Risk factor") +
+  theme(axis.text.x = element_text(angle=45, hjust = 1)) +
+  ggtitle("Death rates attributed to pollution in New Zealand from 1990 to 2019")
+p1
+```
+
+The graph \@ref(fig:rate) shows the rate at which people died due to the effects of different types of pollution over a 29-year period from 1990 to 2019. 
+
+There was an overall downward trend in the impacts of air pollution and ambient particulate matter pollution to death rate. 
+Rate of people died associated air pollution originated from household and ambient ozone pollution showed a slight decrease over the years.
+
+In contrast, the rate at which pollution from ambient ozone contributed to death remained relatively steady.
 
 
 
