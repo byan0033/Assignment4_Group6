@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.5.20)  20 MAY 2022 16:54
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.5.20)  21 MAY 2022 16:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1376,20 +1376,22 @@ Overfull \hbox (56.23262pt too wide) detected at line 296
 
 LaTeX Font Info:    Font shape `T1/fvs/b/n' will be
 (Font)              scaled to size 9.24173pt on input line 306.
+LaTeX Font Info:    Font shape `T1/mdbch/b/n' will be
+(Font)              scaled to size 10.51207pt on input line 310.
+LaTeX Font Info:    Trying to load font information for TS1+mdbch on input line 317.
+(c:/Users/PREDATOR/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/mathdesign/mdbch/ts1mdbch.fd
+File: ts1mdbch.fd 2013/08/29 Fontinst v1.933 font definitions for TS1/mdbch.
+)
+LaTeX Font Info:    Font shape `TS1/mdbch/m/n' will be
+(Font)              scaled to size 10.51207pt on input line 317.
 <Assignment4_files/figure-latex/figure1-1.pdf, id=18, 578.16pt x 361.35pt>
 File: Assignment4_files/figure-latex/figure1-1.pdf Graphic file (type pdf)
 <use Assignment4_files/figure-latex/figure1-1.pdf>
-Package pdftex.def Info: Assignment4_files/figure-latex/figure1-1.pdf  used on input line 321.
+Package pdftex.def Info: Assignment4_files/figure-latex/figure1-1.pdf  used on input line 329.
 (pdftex.def)             Requested size: 364.19664pt x 227.61862pt.
-LaTeX Font Info:    Font shape `T1/mdbch/b/n' will be
-(Font)              scaled to size 10.51207pt on input line 325.
 LaTeX Font Info:    Font shape `T1/mdbch/m/it' will be
-(Font)              scaled to size 10.51207pt on input line 325.
-[2 <./Assignment4_files/figure-latex/figure1-1.pdf>]
-
-LaTeX Warning: Empty bibliography on input line 366.
-
-[3] (./Assignment4.aux)
+(Font)              scaled to size 10.51207pt on input line 333.
+[2] [3 <./Assignment4_files/figure-latex/figure1-1.pdf>] [4] (./Assignment4.aux)
 Package rerunfilecheck Info: File `Assignment4.out' has not changed.
 (rerunfilecheck)             Checksum: 94ABD75460DB039F6B05340ADDED646B;118.
 Package logreq Info: Writing requests to 'Assignment4.run.xml'.
@@ -1397,18 +1399,18 @@ Package logreq Info: Writing requests to 'Assignment4.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 27210 strings out of 480260
- 476232 string characters out of 5892602
- 1181888 words of memory out of 5000000
- 44502 multiletter control sequences out of 15000+600000
- 572129 words of font info for 224 fonts, out of 8000000 for 9000
+ 27486 strings out of 480260
+ 481519 string characters out of 5892602
+ 1182985 words of memory out of 5000000
+ 44735 multiletter control sequences out of 15000+600000
+ 574415 words of font info for 251 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 72i,14n,93p,1008b,850s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 72i,14n,93p,1008b,1454s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {c:/Users/PREDATOR/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/ly1/texnansi.enc}{c:/Users/PREDATOR/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/base/8r.enc}{c:/Users/PREDATOR/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/fontawesome/fontawesometwo.enc}<c:/Users/PREDATOR/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/fontawesome/FontAwesome.pfb><c:/Users/PREDATOR/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/bitstrea/charter/bchb8a.pfb><c:/Users/PREDATOR/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/bitstrea/charter/bchr8a.pfb><c:/Users/PREDATOR/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/bitstrea/charter/bchri8a.pfb><c:/Users/PREDATOR/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/bera/fvsb8a.pfb><c:/Users/PREDATOR/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/bera/fvsr8a.pfb>
-Output written on Assignment4.pdf (3 pages, 7509978 bytes).
+Output written on Assignment4.pdf (4 pages, 7515180 bytes).
 PDF statistics:
- 78 PDF objects out of 1000 (max. 8388607)
- 57 compressed objects within 1 object stream
- 13 named destinations out of 1000 (max. 500000)
- 81939 words of extra memory for PDF output out of 89155 (max. 10000000)
+ 85 PDF objects out of 1000 (max. 8388607)
+ 63 compressed objects within 1 object stream
+ 15 named destinations out of 1000 (max. 500000)
+ 86035 words of extra memory for PDF output out of 89155 (max. 10000000)
 
