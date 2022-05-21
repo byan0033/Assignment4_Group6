@@ -19,6 +19,37 @@
 
 \refsection{0}
   \datalist[entry]{nyt/global//global/global}
+    \entry{barsotti2020probabilistic}{article}{}
+      \name{author}{1}{}{%
+        {{hash=f4e66e0d567a654840ef553d73a52927}{%
+           family={Barsotti},
+           familyi={B\bibinitperiod},
+           given={Sara},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{f4e66e0d567a654840ef553d73a52927}
+      \strng{fullhash}{f4e66e0d567a654840ef553d73a52927}
+      \strng{bibnamehash}{f4e66e0d567a654840ef553d73a52927}
+      \strng{authorbibnamehash}{f4e66e0d567a654840ef553d73a52927}
+      \strng{authornamehash}{f4e66e0d567a654840ef553d73a52927}
+      \strng{authorfullhash}{f4e66e0d567a654840ef553d73a52927}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Bulletin of Volcanology}
+      \field{number}{7}
+      \field{title}{Probabilistic hazard maps for operational use: the case of SO2 air pollution during the Holuhraun eruption (Bár{ð}arbunga, Iceland) in 2014--2015}
+      \field{volume}{82}
+      \field{year}{2020}
+      \field{pages}{1\bibrangedash 15}
+      \range{pages}{15}
+    \endentry
     \entry{gordon2014respiratory}{article}{}
       \true{moreauthor}
       \true{morelabelname}
@@ -96,6 +127,32 @@
       \field{year}{2014}
       \field{pages}{823\bibrangedash 860}
       \range{pages}{38}
+    \endentry
+    \entry{hunt2011policy}{article}{}
+      \name{author}{1}{}{%
+        {{hash=19e84bdd129ad711307b46b635d0c318}{%
+           family={Hunt},
+           familyi={H\bibinitperiod},
+           given={Alistair},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {OECD}%
+      }
+      \strng{namehash}{19e84bdd129ad711307b46b635d0c318}
+      \strng{fullhash}{19e84bdd129ad711307b46b635d0c318}
+      \strng{bibnamehash}{19e84bdd129ad711307b46b635d0c318}
+      \strng{authorbibnamehash}{19e84bdd129ad711307b46b635d0c318}
+      \strng{authornamehash}{19e84bdd129ad711307b46b635d0c318}
+      \strng{authorfullhash}{19e84bdd129ad711307b46b635d0c318}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Policy interventions to address health impacts associated with air pollution, unsafe water supply and sanitation, and hazardous chemicals}
+      \field{year}{2011}
     \endentry
     \entry{mannucci2017health}{article}{}
       \name{author}{2}{}{%

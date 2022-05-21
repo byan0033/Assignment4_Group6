@@ -2355,11 +2355,17 @@
     <bcf:citekey order="8">mannucci2017health</bcf:citekey>
     <bcf:citekey order="9">gordon2014respiratory</bcf:citekey>
     <bcf:citekey order="10">gordon2014respiratory</bcf:citekey>
-    <bcf:citekey order="11">owidoutdoorairpollution</bcf:citekey>
-    <bcf:citekey order="12">neidell2004air</bcf:citekey>
-    <bcf:citekey order="13">owidairpollution</bcf:citekey>
-    <bcf:citekey order="14">mannucci2017health</bcf:citekey>
-    <bcf:citekey order="15">gordon2014respiratory</bcf:citekey>
+    <bcf:citekey order="11">hunt2011policy</bcf:citekey>
+    <bcf:citekey order="12">hunt2011policy</bcf:citekey>
+    <bcf:citekey order="13">barsotti2020probabilistic</bcf:citekey>
+    <bcf:citekey order="14">barsotti2020probabilistic</bcf:citekey>
+    <bcf:citekey order="15">owidoutdoorairpollution</bcf:citekey>
+    <bcf:citekey order="16">neidell2004air</bcf:citekey>
+    <bcf:citekey order="17">owidairpollution</bcf:citekey>
+    <bcf:citekey order="18">mannucci2017health</bcf:citekey>
+    <bcf:citekey order="19">gordon2014respiratory</bcf:citekey>
+    <bcf:citekey order="20">hunt2011policy</bcf:citekey>
+    <bcf:citekey order="21">barsotti2020probabilistic</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nyt">

@@ -45,6 +45,7 @@ library(tidyverse)
 library(readr)
 library(kableExtra)
 library(bookdown)
+library(dplyr)
 ```
 
 
@@ -59,7 +60,6 @@ The research project aims to explore and analyze the numbers and trends of human
 
 ```{r , echo = FALSE, message = FALSE, warning = FALSE}
 Origin_data <- read_csv(here::here("Data/death-rates-from-air-pollution.csv"))
-
 ```
 
 ## Introduction
@@ -162,7 +162,7 @@ ggplot(Q2_data_2,aes(x = Year,
 In figure \@ref(fig:trendsfig), I found a small increase in the number of deaths caused by particulate pollution in Solomon Islands,Central African Republic and Afghanistan, while only a very small number of people in Somalia die from outdoor pollution.
 
 
-# Conclusion 
+## Conclusion 
 
 From the above studies, I conclude that the number of deaths due to indoor air pollution has declined in most countries in recent decades. However, the number of deaths due to outdoor air pollution, such as outdoor particulate matter, is still on the rise. Therefore, @neidell2004air indicated that the world should regularly monitor air quality and reduce sources of particulate pollution.
 
@@ -207,7 +207,9 @@ death_rate <- death %>%
 
 - Q2: How did the death rates associated with different types of pollution change over the years in both countries?
 
-## Exploratory Analysis:
+## Exploratory data analysis:
+
+- Q1
 
 From table \@ref(tab:nz), we can observe that air pollution contributed most to the death rates in New Zealand with 7 deaths per 100000 people.
 
@@ -243,7 +245,7 @@ Similarly, in table \@ref(tab:vn), it can be seen that air pollution is also the
 
 According to @mannucci2017health, there were almost seven million deaths associated with the effects of air pollution. In addition, the impacts tend to be greater across low and middle income countries, mainly due to the increasing shift to industrialization. The notion has been demonstrated in the case of Vietnam and New Zealand, where the number of deaths in Vietnam is approximately 18 times higher than New Zealand.
 
-## Q2
+- Q2
 
 The graph \@ref(fig:nzfig) shows the rate at which people died due to the effects of different types of pollution over a 29-year period from 1990 to 2019. 
 
@@ -295,8 +297,121 @@ It can be seen that there was a overall decrease in deaths attributed to air pol
 However, the death rate in Vietnam remained much higher than in New Zealand. @gordon2014respiratory explained this by the increase in urbanization and lack of access to clean fuels for cooking in developing nations.
 
 
+# Section 3
+
+## Introduction
 
 
+Last but not least, we would like to further explore countries with extreme values on both ends. Henceforth, we can see the nature of trends and numbers across the year, along with reasonable research and facts which support those unfortunate number of deaths by pollution. Which lead us to formulate research questions as below:
+
+
+## Research Questions
+
+- Q1: Which country has the highest number of Air Pollution caused casualties? And what is its trend across the year pertaining to their cause of deaths severity?
+- Q2: What is the 4 lowest polluted countries? Regarding the comparison between them, what are possible reasons for these significantly low results?
+
+```{r read data, echo = FALSE, message = FALSE, warning = FALSE}
+data <- read.csv("Data/death-rates-from-air-pollution.csv")
+```
+
+```{r clean data 1, echo = FALSE, message = FALSE, warning = FALSE}
+air_pollution <- data %>% 
+  rename(Country = Entity) %>% 
+  rename(Deaths_From_Solid_Fuels = 
+         Deaths...Cause..All.causes...Risk..Household.air.pollution.from.solid.fuels...Sex..Both...Age..Age.standardized..Rate.) %>%
+  rename(Deaths_From_Ambient_Matter =
+         Deaths...Cause..All.causes...Risk..Ambient.particulate.matter.pollution...Sex..Both...Age..Age.standardized..Rate.) %>% 
+  rename(Deaths_From_Air_Pollution = Deaths...Cause..All.causes...Risk..Air.pollution...Sex..Both...Age..Age.standardized..Rate.) %>% 
+  rename(Deaths_Ambient_Ozone = Deaths...Cause..All.causes...Risk..Ambient.ozone.pollution...Sex..Both...Age..Age.standardized..Rate.) %>% 
+  select("Country", "Year", "Deaths_From_Solid_Fuels", "Deaths_From_Ambient_Matter", "Deaths_From_Air_Pollution", "Deaths_Ambient_Ozone")
+```
+
+
+## Exploratory data analysis
+
+By exploring the highest ends of the data, we discovered that Solomon Islands has the greatest number of deaths caused by pollution in significant margins of gap comparatively to latter ranked countries. Therefore, Solomon Islands data set is further explored into detail on its trend across the year.
+
+```{r Question 1, echo = FALSE, message = FALSE, warning = FALSE}
+air_pollution_highest <- air_pollution %>% 
+  select("Country", "Year", "Deaths_From_Air_Pollution") %>% 
+  group_by(Country) %>%
+  summarise(Deaths_From_Air_Pollution = mean(Deaths_From_Air_Pollution, na.rm=TRUE)) %>%
+  arrange(desc(Deaths_From_Air_Pollution))
+
+air_pollution_SI <- air_pollution %>% 
+  filter(Country == "Solomon Islands")
+```
+
+
+```{r figure1, echo = FALSE, message = FALSE, warning = FALSE, fig.align='center', fig.cap = "Solomon Islands - Annual Trend", out.width='80%'}
+colors <- c("Deaths From Air Pollution" = "red", "Deaths From Solid Fuels" = "blue", "Deaths From Ambient Matter" = "green", "Deaths Ambient Ozone" = "yellow")
+
+air_pollution_SI %>%
+  ggplot(aes(x = Year)) +
+  geom_line(aes(y = Deaths_From_Air_Pollution, color = "Deaths From Air Pollution")) +
+  geom_line(aes(y = Deaths_From_Solid_Fuels, color = "Deaths From Solid Fuels")) +
+  geom_line(aes(y = Deaths_From_Ambient_Matter, color = "Deaths From Ambient Matter")) +
+  geom_line(aes(y = Deaths_Ambient_Ozone, color = "Deaths Ambient Ozone")) +
+  labs(y = "Death Rate per Type of Pollution", color = "Legend") +
+  scale_color_manual(values = colors)
+```
+
+Referring to figure \@ref(fig:figure1)) above, we can see that, although trends are in the declining movement since the start of 1990, the number of deaths caused by both air pollution and solid fuels are terrifying high comparatively. With these numbers, Solomon Islands is assured to be in the stage of air pollution crisis. 
+
+As stated by @hunt2011policy in the research paper, health hazards endpoints which quantified are including, but not limited to Premature Mortality, Respiratory and Cardiovascular Illness, Cancer, or even Infant Mortality. Therefore, Solomon Islands living condition is still at an alarming stage which need immediate addressed.
+
+
+```{r Question 2, echo = FALSE, message = FALSE, warning = FALSE, fig.pos="H"}
+air_pollution_lowest <- air_pollution %>% 
+  select("Country", "Year", "Deaths_From_Air_Pollution") %>% 
+  group_by(Country) %>%
+  summarise(Deaths_From_Air_Pollution = mean(Deaths_From_Air_Pollution, na.rm=TRUE)) %>%
+  arrange(Deaths_From_Air_Pollution)
+
+air_pollution_lowest_cnty <- air_pollution %>% 
+  select("Country", "Year", "Deaths_From_Air_Pollution") %>% 
+  group_by(Country) %>% 
+  filter(Country == c("Iceland", "New Zealand", "Australia", "Puerto Rico")) %>% 
+  summarise(Deaths_From_Air_Pollution = mean(Deaths_From_Air_Pollution, na.rm=TRUE)) %>%
+  arrange(Deaths_From_Air_Pollution) 
+
+air_pollution_lowest_other <- air_pollution %>% 
+  select("Country", "Year", "Deaths_From_Solid_Fuels") %>% 
+  group_by(Country) %>% 
+  filter(Country == c("Iceland", "New Zealand", "Australia", "Puerto Rico")) %>% 
+  summarise(Deaths_From_Solid_Fuels = mean(Deaths_From_Solid_Fuels, na.rm=TRUE)) %>%
+  arrange(Deaths_From_Solid_Fuels) 
+```
+
+Following this, we are looking at the lowest end for least number of deaths caused by pollution; in which Iceland, New Zealand, Australia, and Puerto Rico hold top spots.  
+
+
+```{r table1, echo = FALSE, message = FALSE, warning = FALSE, fig.align='center', fig.cap = "Lowest Air Pollution based on Countries", fig.pos="H"}
+air_pollution_lowest_cnty %>%
+  kable(caption = "Top 4 Countries with lowest Air Pollution Death", digits=3) %>% 
+  kable_styling(latex_options = "HOLD_position")
+```
+
+From table \@ref(tab:table1)), we can see that less than 9 persons on average resulted in a fatal incident caused by air pollution.
+
+```{r table2, echo = FALSE, message = FALSE, warning = FALSE, fig.align='center', fig.cap = "Lowest Air Pollution based on Countries", fig.pos="H"}
+air_pollution_lowest_other %>%
+  kable(caption = "Top 4 Countries with lowest Air Pollution Death from Solid Fuels", digits=3) %>% 
+  kable_styling(latex_options = "HOLD_position")
+```
+
+Furthermore, comparatively to solid fuels-led death, with even less numbers are shown as a result in table \@ref(tab:table2)).
+
+By using Iceland as the main example, according to @barsotti2020probabilistic, even though air pollution rate is generally excellent in Iceland, a subtle surge in chemical or pollution such as SO2 is considered as a threat to their ozone and breathing environment. Which they have immediate action to tackle and resolve problem as quick as possible. 
+
+
+## Conclusion
+
+Hence, these countries are ensured that rapid response in air pollution issue could make a potential bright further for their countries' air for generations.
+
+# Report Conclusion
+
+In conclusion, we can see that air pollution is subtle yet highly severe global issues. Even though many countries can manage to suppress their toxic footprint, this is a global matter that every country needs to address for the better and brighter future of air pollution-less world.
 
 
 
