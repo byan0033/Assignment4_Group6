@@ -56,7 +56,7 @@ death <- read_csv(here::here("Data/death-rates-from-air-pollution.csv"))
 ```
 # Introduction:
 
-Pollution is not only the leading factor that takes away peoples’ lives, it also also leaves considerable effects on our living quality. 
+Pollution is not only the leading factor taking away peoples’ lives, it also also leaves serious long-term effects on our living quality. 
 
 In this section we will compare the relationship between death rates and different types of pollution from 1990 to 2019 in two countries, Vietnam and New Zealand.
 
@@ -76,6 +76,12 @@ death_rate <- death %>%
                names_to = "Risk_factor",
                values_to = "Rate")
 ```
+
+# Research question:
+
+- Q1: Which type of pollution is the most common attribute of death in each country?
+
+- Q2: How did the death rates associated with different types of pollution change over the years in both countries?
 
 
 
