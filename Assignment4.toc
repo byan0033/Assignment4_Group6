@@ -5,13 +5,13 @@
 \contentsline {subsection}{\numberline {2.3}Exploratory data analysis}{3}{subsection.2.3}%
 \contentsline {subsection}{\numberline {2.4}Conclusion}{5}{subsection.2.4}%
 \contentsline {section}{\numberline {3}Section 2}{5}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Introduction:}{6}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Research question:}{6}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}Exploratory data analysis:}{6}{subsection.3.3}%
-\contentsline {subsection}{\numberline {3.4}Conclusion:}{9}{subsection.3.4}%
-\contentsline {section}{\numberline {4}Section 3}{9}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Introduction}{10}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}Research Questions}{10}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}Exploratory data analysis}{10}{subsection.4.3}%
-\contentsline {subsection}{\numberline {4.4}Conclusion}{12}{subsection.4.4}%
-\contentsline {section}{\numberline {5}Report Conclusion}{12}{section.5}%
+\contentsline {subsection}{\numberline {3.1}Introduction}{6}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Research question}{6}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Exploratory data analysis}{6}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Conclusion}{8}{subsection.3.4}%
+\contentsline {section}{\numberline {4}Section 3}{8}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Introduction}{8}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Research Questions}{9}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Exploratory data analysis}{9}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Conclusion}{10}{subsection.4.4}%
+\contentsline {section}{\numberline {5}Report Conclusion}{11}{section.5}%
